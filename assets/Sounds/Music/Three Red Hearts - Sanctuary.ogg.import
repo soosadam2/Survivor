@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bagqhl877jfrq"
+path="res://.godot/imported/Three Red Hearts - Sanctuary.ogg-b7bb0cebcd8ef6c4d2c710df3da3a9fa.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Sounds/Music/Three Red Hearts - Sanctuary.ogg"
+dest_files=["res://.godot/imported/Three Red Hearts - Sanctuary.ogg-b7bb0cebcd8ef6c4d2c710df3da3a9fa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
