@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsn1biyvb77s5"]
+[gd_scene load_steps=13 format=3 uid="uid://bsn1biyvb77s5"]
 
 [ext_resource type="Script" uid="uid://sqn2vptdeggh" path="res://characters/player/player.gd" id="1_xxgcw"]
 [ext_resource type="Texture2D" uid="uid://d01gqc6kqo58y" path="res://assets/Sprites/Pixel Crawler/Entities/Npc's/Knight/Idle/Idle-Sheet.png" id="2_5dc8e"]
 [ext_resource type="Texture2D" uid="uid://dcfe80he5gvdi" path="res://assets/Sprites/Pixel Crawler/Entities/Npc's/Knight/Run/Run-Sheet.png" id="3_ixbpm"]
 [ext_resource type="Texture2D" uid="uid://cxolwhwcl2f64" path="res://assets/Sprites/Pixel Crawler/Entities/Npc's/Knight/Death/Death-Sheet.png" id="4_c6leb"]
+[ext_resource type="Script" uid="uid://cdocminxox1j4" path="res://characters/player/player_hsm.gd" id="5_ixbpm"]
+[ext_resource type="Script" uid="uid://dspdxmls22x5b" path="res://characters/player/move_state.gd" id="6_c6leb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b886q"]
 radius = 3.0
@@ -240,8 +242,15 @@ position = Vector2(0, -14)
 texture = ExtResource("2_5dc8e")
 hframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="PlayerAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_3t07l")
 }
-autoplay = "run"
+
+[node name="PlayerHSM" type="LimboHSM" parent="." node_paths=PackedStringArray("player", "animation_player")]
+script = ExtResource("5_ixbpm")
+player = NodePath("..")
+animation_player = NodePath("../PlayerAnimationPlayer")
+
+[node name="MoveState" type="LimboState" parent="PlayerHSM"]
+script = ExtResource("6_c6leb")
