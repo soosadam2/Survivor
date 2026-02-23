@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctnvmqe01fopx"]
+
+[ext_resource type="Texture2D" uid="uid://dn44rsah3jbnt" path="res://assets/Sprites/Pixel Crawler/Environment/Props/Static/Vegetation.png" id="1_bl3i6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3m7d"]
+atlas = ExtResource("1_bl3i6")
+region = Rect2(48, 416, 16, 16)
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Vegetation" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_p3m7d")

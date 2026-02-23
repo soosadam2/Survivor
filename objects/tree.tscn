@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ebji1m5j4mog"]
+
+[ext_resource type="Texture2D" uid="uid://ivtubla3jde3" path="res://assets/Sprites/Pixel Crawler/Environment/Props/Static/Trees/Model_01/Size_02.png" id="1_j00qk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8ko4"]
+atlas = ExtResource("1_j00qk")
+region = Rect2(32, 0, 32, 64)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Tree" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -30)
+texture = SubResource("AtlasTexture_d8ko4")
