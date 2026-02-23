@@ -9,7 +9,15 @@ extends LimboState
 var _animation_player : AnimationPlayer
 
 func _setup() -> void:
-	_animation_player = get_parent().animation_player
+	_animation_player = blackboard.get_var("animation_player")
+	
+func _update(delta: float) -> void:
+	var direction : Vector2 = blackboard.get_var("direction")
+	
+	if direction:
+		_animation_player.play(run_anim)
+	else:
+		_animation_player.play(idle_anim)
 
 func _enter() -> void:
 	_animation_player.play(idle_anim)

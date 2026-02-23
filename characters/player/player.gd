@@ -2,10 +2,17 @@ class_name Player
 extends CharacterBody2D
 
 @export var display_name : StringName = &"player_name"
+
+## Base movement speed of the player character
 @export var speed : float = 100.0
 
+@export var input : PlayerInput
+
+func _ready() -> void:
+	assert(input != null, "Input must be assigned for the character body to move properly.")
+
 func _physics_process(delta: float) -> void:
-	var direction = Input.get_vector(&"left", &"right", &"up", &"down")
+	var direction := input.direction 
 	
 	if direction:
 		velocity = direction * speed
