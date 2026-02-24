@@ -28,6 +28,6 @@ func launch(p_direction : Vector2) -> void:
 	
 func _on_hitbox_hit(p_hurtbox : HurtBox2D) -> void:
 	## TODO Damage calculation
-	var final_damage : int = 10
+	var final_damage : int = 100
 	
 	p_hurtbox.try_deal_damage(final_damage)
