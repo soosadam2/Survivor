@@ -24,6 +24,10 @@ window/size/viewport_height=720
 
 enabled=PackedStringArray("res://addons/collapse_folders/plugin.cfg")
 
+[global_group]
+
+Projectiles="The node where all projectiles are contained"
+
 [input]
 
 left={

@@ -11,7 +11,7 @@ var _animation_player : AnimationPlayer
 func _setup() -> void:
 	_animation_player = blackboard.get_var("animation_player")
 	
-func _update(delta: float) -> void:
+func _update(_delta: float) -> void:
 	var direction : Vector2 = blackboard.get_var("direction")
 	
 	if direction:

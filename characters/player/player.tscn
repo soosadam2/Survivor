@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bsn1biyvb77s5"]
+[gd_scene load_steps=21 format=3 uid="uid://bsn1biyvb77s5"]
 
 [ext_resource type="Script" uid="uid://sqn2vptdeggh" path="res://characters/player/player.gd" id="1_xxgcw"]
 [ext_resource type="Texture2D" uid="uid://d01gqc6kqo58y" path="res://assets/Sprites/Pixel Crawler/Entities/Npc's/Knight/Idle/Idle-Sheet.png" id="2_5dc8e"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" uid="uid://cdocminxox1j4" path="res://characters/player/player_hsm.gd" id="5_ixbpm"]
 [ext_resource type="Script" uid="uid://dspdxmls22x5b" path="res://characters/player/move_state.gd" id="6_c6leb"]
 [ext_resource type="Script" uid="uid://d3d37ydxbvonr" path="res://characters/player/player_input.gd" id="7_dirf7"]
+[ext_resource type="Script" uid="uid://dcndrs3hxfqt8" path="res://characters/player/weapon2d.gd" id="9_rpf03"]
+[ext_resource type="Texture2D" uid="uid://bb2x71jrhv8se" path="res://assets/Sprites/Pixel Crawler/Weapons/Wood/Wood.png" id="10_3t07l"]
+[ext_resource type="Script" uid="uid://dk7ujiay2nbdh" path="res://weapons/weapon_definition.gd" id="11_on558"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b886q"]
 radius = 3.0
@@ -293,6 +296,16 @@ var/animation_player/hint = 0
 var/animation_player/hint_string = ""
 binding/direction = NodePath("../PlayerInput:direction")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqopd"]
+atlas = ExtResource("10_3t07l")
+region = Rect2(64, 0, 16, 48)
+
+[sub_resource type="Resource" id="Resource_icpky"]
+script = ExtResource("11_on558")
+name = &"Spear"
+icon = SubResource("AtlasTexture_gqopd")
+metadata/_custom_type_script = "uid://dk7ujiay2nbdh"
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("input")]
 script = ExtResource("1_xxgcw")
 display_name = &"fagyika"
@@ -330,3 +343,7 @@ script = ExtResource("6_c6leb")
 
 [node name="PlayerInput" type="Node" parent="."]
 script = ExtResource("7_dirf7")
+
+[node name="Weapon2D" type="Node2D" parent="."]
+script = ExtResource("9_rpf03")
+definition = SubResource("Resource_icpky")

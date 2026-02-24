@@ -11,7 +11,7 @@ extends CharacterBody2D
 func _ready() -> void:
 	assert(input != null, "Input must be assigned for the character body to move properly.")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var direction := input.direction 
 	
 	if direction:
